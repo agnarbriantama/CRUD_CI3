@@ -163,9 +163,7 @@ class Home extends CI_Controller {
 	}
 
 
-	public function delete($id,$gambar){
-		 $path = './uploads/';
-      	@unlink($path.$gambar);
+	public function delete($id){
 		$this->db->where('id_mahasiswa',$id);
 		$this->db->delete('kuliah');
 		$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
